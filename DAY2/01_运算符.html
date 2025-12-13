@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    //赋值运算符
+    let num=1
+    num+=1
+    console.log(num);
+
+    //一元运算符，+'123' num+=1 num++ ++num
+    let i=1
+    console.log(i++ + ++i +i);//得到7
+    
+    //比较运算符
+    console.log(2=='2');//存在隐式转换，把字符串转化成数字
+    //判断是否相等主要用三等号
+    console.log(2==='2');//判断严格，数据类型和值都要一样
+    console.log(NaN===NaN);//NaN不等于任何，甚至不等于它自己
+    //涉及nan都是false
+    
+    //逻辑运算符，与或非
+    //例子
+    let aa=+prompt('input:')
+    alert(aa%4===0&&aa%100!==0)
+
+    //运算优先级
+    
+    
+  </script>
+</body>
+</html>

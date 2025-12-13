@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    //匿名函数
+     /* let fn=function (x,y){
+      console.log(x+y);
+     }
+     fn(1,2) */
+
+     //具名函数的调用可以在任意位置
+     //匿名函数必须先定义才能调用，像下面那样会报错
+     /* fn()
+     let fn=function (x,y){
+      console.log(x+y);
+     } */
+
+     //立即执行函数：
+    //  格式为(function(形参){})(实参)
+    /*  (function(){
+      let sum=0
+      console.log(sum);
+     })();//必须有分号
+     //使用立即执行函数，在内部使用相同的变量名不会报错
+     (function(){
+      let sum=3
+      console.log(sum);
+     })() */
+     //作用是防止变量污染
+
+     //例子
+     let time=+prompt('imput:')
+     let hour=0,min=0,sec=0
+     if(time>=60){
+      sec=time%60
+      if(time/60>=60){hour=parseInt(time/3600);min=(time-3600*hour-sec)/60}
+      else{min=(time-sec)/60}
+      document.write(`${time} is ${hour<10?'0'+hour:hour}:${min<10?'0'+min:min}:${sec<10?'0'+sec:sec}`)
+     }
+     else{
+      document.write(`${time} is 00:00:${sec<10?'0+sec':sec}`)
+     }
+
+
+
+  </script>
+</body>
+</html>

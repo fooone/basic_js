@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    span{
+      display: inline-block;
+      padding:5px 10px;
+      border: 1px solid black;
+      margin:2px;
+      width:50px
+    }
+  </style>
+</head>
+<body>
+  <script>
+    //for(变量起始值；循环条件；变量变化){}
+
+    //例子1 输出1-100
+    /* for (let i=1;i<=100;i++){
+      document.write(`${i}<br/>`)
+    } */
+
+    //例子2
+    // for(let i=0;i<5;i++){document.write('*')}
+
+
+    //例子3
+  /*   let arr=['22','12','332','33','44']
+    for(let i=0;i<arr.length;i++){
+      console.log(arr[i]);
+      
+    } */
+
+
+    //嵌套循环
+   /*  let x=+prompt('hansghu:')
+    let y=+prompt('lieshu:')
+    for (let i=1;i<=x;i++){
+      for(let j=1;j<=y;j++){
+        document.write('*')
+      }
+      document.write(`<br/>`)
+    } */
+
+   /* for (let i=1;i<=5;i++){
+      for(let j=1;j<=i;j++){
+        document.write('*')
+      }
+      document.write(`<br/>`)
+    } */
+
+    
+   for (let i=1;i<=9;i++){
+      for(let j=1;j<=i;j++){
+        document.write(`<span>${i}*${j}=${i*j}</span>`)
+      }
+      document.write(`<br/>`)
+   }
+
+
+    
+  </script>
+</body>
+</html>

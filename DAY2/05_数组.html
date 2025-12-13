@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    //1.字面量声明数组
+    // let arr=[1,2,3,'t',true]
+    //2.使用new Array构造函数声明
+    // let arr =new Array(1,2,'we',true)
+    
+    //数组求和
+   /*  let arr=[2,6,1,7,4]
+    let sum=0
+    for (let i=0;i<arr.length;i++){
+      sum+=arr[i]
+    }
+    console.log(sum); */
+
+    //数组的增删改查
+
+    //数组修改可以直接修改
+
+
+    //数组增加
+
+   /*  //数组.push(),添加到末尾，并返回数组的新长度
+    let arr=[1,23,'new']
+    console.log(arr.push('we'));//返回数组长度4
+
+    //数组.unshift()添加到开头
+    console.log(arr.unshift('w'));
+    console.log(arr); */
+    
+
+    //例子
+   /*  let arr1=[2,0,6,1,77,52,4,23]
+    let arr2=[]
+    for(let i=0;i<arr1.length;i++){
+      if(arr1[i]>=10){
+        arr2.push(arr1[i])
+      }
+    }
+    console.log(arr2);
+ */
+    //删除
+    //arr.pop()删除最后一个元素
+    let arr=[12,33,2,56]
+/*     console.log(arr.pop());//返回被删除的元素
+
+    console.log(arr.shift());//删除第一个元素，也是返回被删除的元素
+     */
+
+    //arr.splice(起始位置，删除几个元素)，不写第二个参数就是删除起始位置到最后的所有元素
+    console.log(arr.splice(1,1));
+    
+    
+    
+  </script>
+</body>
+</html>
