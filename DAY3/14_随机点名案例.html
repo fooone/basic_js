@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .box{
+      background-color: pink;
+      width: 600px;
+      height: 300px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: relative;
+      padding-top: 50px;
+    }
+  /* 给顶部留出空间 */
+    
+    
+    .question {
+      margin-bottom: 50px;  /* 文字与按钮的距离 */
+      font-size: 24px;
+    }
+    
+    .buttons {
+      margin-top: 20px;
+    }
+    
+    button {
+      padding: 10px 20px;
+      margin: 0 10px;
+    }
+    
+    .x{
+      position: absolute;
+      /* right: 0px; */
+      top: 0px;
+      width: 150px;
+      height: 40px;
+      background-color: yellow;
+      text-align: center;
+      line-height: 20px;
+      font-size: 30px;
+      cursor:pointer
+    }
+  </style>
+</head>
+<body>
+  <div class="box">
+    <div class="questions">问题是：问题1</div>
+    <div class="x">随机问答</div>
+    <div class="buttons">
+      <button  class="start">start</button>
+      <button  class="end">end</button>
+    </div>
+
+  </div>
+  <script>
+    let list=[
+      {id:1,content:'问题1'},
+      {id:2,content:'问题2'},
+      {id:3,content:'问题3'},
+      {id:4,content:'问题4'},
+      {id:5,content:'问题5'},
+      {id:6,content:'问题6'},
+      {id:7,content:'问题7'},
+      {id:8,content:'问题8'},
+      {id:9,content:'问题9'},
+      {id:10,content:'问题10'},
+      {id:11,content:'问题11'},
+      {id:12,content:'问题12'},
+    ]
+    const start=document.querySelector('.start')
+    const end=document.querySelector('.end')
+    const box=document.querySelector('.questions')
+    function getRand(){
+      let i=Math.floor(Math.random()*list.length)
+      return i
+    }//得到的i是id
+
+    let timer=null
+    let lastQuestion=null
+
+    start.addEventListener('click',function(){
+
+      timer=setInterval(function(){
+        const rand=getRand()
+        box.innerHTML=`问题是：${list[rand].content}`
+        lastQuestion=list[rand]
+      },100)
+
+      end.addEventListener('click',function(){
+        clearInterval(timer)
+        if (lastQuestion) {
+      list = list.filter(item => item.id !== lastQuestion.id)}
+      })
+      if(list.length===1){start.disabled=true
+        end.disabled=true
+      }
+    })
+
+      
+    // x.addEventListener('click',function(){
+    //   box.style.display='none'
+    // })
+  </script>
+</body>
+</html>

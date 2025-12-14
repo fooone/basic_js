@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .box{
+      width:200px;
+      height:200px
+    }
+  </style>
+</head>
+<body>
+  <div class="box">123</div>
+  <div class="box">abc</div>
+  <p id="nav">导航栏</p>
+  <ul>
+    <li>test1</li>
+    <li>test2</li>
+    <li>test3</li>
+  </ul>
+  <script>
+    //获取匹配的第一个元素
+    // const box=document.querySelector('.box')
+    // const box=document.querySelector('div')
+    // console.log(box);
+
+    // const p=document.querySelector('#nav')
+    // console.log(p);
+
+    const li1=document.querySelectorAll('ul li')
+    console.log(li1);
+  
+  </script>
+</body>
+</html>

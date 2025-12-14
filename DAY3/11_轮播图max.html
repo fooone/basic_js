@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    *{
+      box-sizing: border-box;}
+    
+    .slider{
+      width: 250px;
+      height: 400px;
+      overflow: hidden;
+
+    }
+    .slider-wrapper{
+      width:100%;
+      height:320px;
+    }
+    .slider-wrapper img{
+      width: 100%;
+      height: 100%;
+      display: block;
+    }
+
+    .slider-footer{
+      height: 80px;
+      background-color: yellow;
+      padding:12px 12px 0 12px;
+      position: relative;
+    }
+
+    .slider-footer .toggle{
+      position: absolute;
+      right: 0;
+      top: 12px;
+      display: flex;
+    }
+
+    .slider-footer .toggle button{
+      margin-right: 12px;
+      width: 28px;
+      height: 28px;
+      appearance: none;
+      border: none;
+      background: slateblue;
+      color: antiquewhite;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+
+    .slider-footer .toggle button:hover{
+      background: slateblue;
+    }
+
+    .slider-footer p{
+      margin: 0;
+      color: aliceblue;
+      font-size: 18px;
+      margin-bottom: 10px;
+    }
+
+    .slider-indicator{
+      margin: 0;
+      padding:0;
+      list-style: none;
+      display: flex;
+      align-items:center;
+    }
+
+    .slider-indicator li{
+      width: 8px;
+      height: 8px;
+      margin: 4px;
+      border-radius: 50%;
+      background: palegreen;
+      opacity: 0.4;
+      cursor: pointer;
+    }
+
+    .slider-indicator li.active{
+      width: 12px;
+      height: 12px;
+      opacity: 1;
+    }
+
+  </style>
+</head>
+<body>
+  <div class="slider">
+    <div class="slider-wrapper">
+      <img src="../bian.jpeg" alt="">
+    </div>
+    <div class="slider-footer">
+      <p>woshi</p>
+      <ul class="slider-indicator">
+        <li class="active"></li>
+        <li></li>
+        <li></li>
+        <li ></li>
+      </ul>
+      <div class="toggle">
+        <button class="prev">&lt;</button>
+        <button class="next">&gt;</button>
+      </div>
+    </div>
+  </div>
+  <script>
+
+    const orData=[
+      {url:'../bian.jpeg',title:'我是边牧',color:'black'},
+      {url:'../chai.jpg',title:'我是柴犬',color:'orange'},
+      {url:'../corgi.jpg',title:'我是柯基',color:'yellow'},
+      {url:'../demu.jpeg',title:'我是德牧',color:'brown'},
+    ]
+
+    let i=0
+    let timer=setInterval(function(){
+      i=i%4
+      a(i)
+      i++
+      console.log(i);
+      
+
+    },1000)
+
+    function a(i){
+    let a=i
+    // console.log(orData[a]);
+    const img=document.querySelector('.slider-wrapper>img')
+    img.src=orData[a].url
+    //文字
+    const p=document.querySelector('.slider-footer>p')
+    p.innerHTML=orData[a].title
+//footer颜色
+    const footer=document.querySelector('.slider-footer')
+    footer.style.backgroundColor=orData[a].color
+//小圆点高亮
+    // const li=document.querySelector(`.slider-indicator li:nth-child(${a+1})`)
+
+    // li.classList.add('active')}
+    document.querySelector(`.slider-indicator .active`).classList.remove('active')
+    document.querySelector(`.slider-indicator li:nth-child(${a+1})`).classList.add('active')
+   
+  }
+
+  </script>
+</body>
+</html>

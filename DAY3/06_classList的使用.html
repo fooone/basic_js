@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .box{
+      width: 200px;
+      height: 200px;
+      background-color: pink;
+    }
+    .active{
+      color:red;
+      background-color: skyblue;
+    }
+  </style>
+</head>
+<body>
+  <div class="box">first</div>
+  <script>
+    //通过classList添加
+    //获取元素
+    const box=document.querySelector('.box')
+    //这里下面的类名不加.因为已经确定是class类名
+    // box.classList.add('active')
+
+    //删除
+    // box.classList.remove('box')
+
+    //切换，有括号里的属性就删掉，没有就加上，
+    box.classList.toggle('active')
+  </script>
+</body>
+</html>

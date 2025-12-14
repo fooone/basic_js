@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <!-- <script>
+    // setInterval(函数，间隔时间)
+    // setInterval(function(){
+    //   console.log('1');
+      
+    // },1000)
+    function fn(){
+      console.log('1');
+      
+    }
+    let n=setInterval(fn,1000)//这里不能加小括号 
+
+    clearInterval(n)
+   
+  </script> -->
+ <button class='btn' disabled>button(5)</button>
+  <script>
+    // let i=1
+    // let n=setInterval(function(){i++
+    //   document.write(i)
+    // },200)
+    // clearInterval(n)
+    const btn=document.querySelector('button')
+    let i=5
+    let n=setInterval(function(){
+      i--
+      btn.innerHTML=`button(${i})`
+      if(i===0){
+        clearInterval(n)
+        btn.disabled=false
+        btn.innerHTML='yes'
+      }
+    },1000)
+    
+
+    //例子
+    
+  </script>
+</body>
+</html>

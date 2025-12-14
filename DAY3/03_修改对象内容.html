@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <div class="box">1222</div>
+  <div class="a">2234</div>
+  <script>
+    const box=document.querySelector('.box')
+    const box11=document.querySelector('.a')
+    console.log(box.innerText);
+    box.innerText='<bold>44445</bold>'//不解析标签
+    box11.innerHTML='<strong>44445</strong>'//会解析标签
+    
+  </script>
+</body>
+</html>
