@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <input type="text" placeholder="11">
+  <div class="text">0/200字</div>
+
+  <script>
+    const input=document.querySelector('input')
+    const text=document.querySelector('.text')
+    let a=0
+
+    //键盘事件
+    // input.addEventListener('keydown',function(){
+    //   console.log('1');
+      
+    // })
+    // input.addEventListener('keyup',function(){
+    //   console.log('0');
+      
+    // })
+
+
+    //input事件
+    // input.addEventListener('input',function(){
+    //   console.log(input.value);
+    // })
+
+    input.addEventListener('input',function(){
+
+      a=input.value.length
+      text.innerHTML=`${a}/200字`
+      
+    })
+
+
+ 
+  </script>
+
+</body>
+</html>

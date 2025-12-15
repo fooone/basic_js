@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    *{
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    ul{
+      list-style: none;
+    }
+    .mi{
+      position: relative;
+      width: 223px;
+      margin:100px auto;
+    }
+    .mi input{
+      width: 223px;
+      height: 48px;
+      padding: 0 10px;
+      font-size: 14px;
+      line-height: 48px;
+      border: 1px solid #e0e0e0;
+      outline: none;
+    }
+    .mi .search{
+      border: 1px solid orange;
+    }
+    .result-list{
+      display: none;
+      position: absolute;
+      left: 0;
+      top: 48px;
+      width: 223px;
+      border: 1px solid orange;
+      border-top: 0;
+      background: wheat;
+    }
+    .result-list a{
+      display: block;
+      padding: 6px 15px;
+      font-size: 12px;
+      color: brown;
+      text-decoration: none;
+
+    }
+    .result-list a:hover{
+      background: gainsboro;
+    }
+  </style>
+</head>
+<body>
+  <!-- 例子 -->
+  <!-- <input type="text">
+  <script>
+    const input=document.querySelector('input')
+    input.addEventListener('focus',function(){
+      console.log('yes');
+      
+    })
+    input.addEventListener('blur',function(){
+      console.log('no');
+      
+    })
+  </script> -->
+
+  <div class="mi">
+    <input type="search" placeholder="search">
+    <ul class="result-list">
+      <li><a href="#">全部商品</a></li>
+      <li><a href="#">qwe</a></li>
+      <li><a href="#">qaa</a></li>
+      <li><a href="#">eed</a></li>
+      <li><a href="#">cxs</a></li>
+      <li><a href="#">wsd</a></li>
+    </ul>
+  </div>
+
+  <script>
+    const input=document.querySelector('[type=search]')
+    const ul=document.querySelector('.result-list')
+    //监听事件
+    input.addEventListener('focus',function(){
+      ul.style.display='block'
+      input.classList.add('search')
+    })
+    input.addEventListener('blur',function(){
+      ul.style.display='none'
+      input.classList.remove('search')
+    })
+
+    
+    
+  </script>
+
+
+</body>
+</html> 

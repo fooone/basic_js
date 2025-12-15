@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <button>click</button>
+  <script>
+
+    //环境对象this代表着当前函数运行时所处的环境
+    //每个函数里面都有this环境对象,普通函数里面this指向的是window
+
+    function fn(){
+      console.log(this);
+    }
+    fn()
+
+    //谁调用，this就是谁
+    const btn=document.querySelector('button')
+    btn.addEventListener('click',function(){
+      console.log(this);
+      
+    })
+
+    // <!-- 如果将函数A作为参数传递给函数B时，则称函数A为回调函数 -->
+  </script>
+</body>
+</html>

@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .comments-container {
+      margin-top: 20px;
+      border-top: 1px solid #ccc;
+      padding-top: 10px;
+    }
+    
+    .comment {
+      background-color: #f5f5f5;
+      padding: 10px;
+      margin: 10px 0;
+      border-radius: 5px;
+      border-left: 3px solid #4CAF50;
+    }
+    </style>
+</head>
+<body>
+  <!-- <input type="text">
+  <script>
+    const input=document.querySelector('input')
+    input.addEventListener('keyup',function(e){
+      console.log(e);
+      if(e.key==='Enter'){
+        console.log('11');
+        
+      }
+    })
+  </script> -->
+
+    <input type="text" placeholder="11">
+  <div class="text">0/200字</div>
+  <button class="upload">go</button>
+  <div class="comments-container"></div>
+
+
+  <script>
+    const input=document.querySelector('input')
+    const text=document.querySelector('.text')
+    const go=document.querySelector('.upload')
+    const commentsContainer=document.querySelector('.comments-container')
+    let a=0
+
+    input.addEventListener('input',function(){
+
+      a=input.value.length
+      text.innerHTML=`${a}/200字`
+      
+    })
+    // let tx=null
+    //按回车键获得文字
+    function submitComment() {
+      const tx = input.value.trim()
+      
+      if (tx === '') {
+        alert('请输入内容')
+        return
+      }
+      
+      // 创建新的评论元素
+      const commentDiv = document.createElement('div')
+      commentDiv.className = 'comment'
+      commentDiv.textContent = tx
+      
+      // 将新评论添加到最前面
+      commentsContainer.insertBefore(commentDiv, commentsContainer.firstChild)
+      
+      // 清空输入框
+      input.value = ''
+      text.innerHTML = '0/200字'
+    }
+
+    // 按回车键提交评论
+    input.addEventListener('keyup', function(e) {     
+      if (e.key === 'Enter') {
+        submitComment()
+      }
+    })
+    
+    // 按go按钮提交评论
+    go.addEventListener('click', function() {
+      submitComment()
+    })
+
+
+    // input.addEventListener('keyup',function(e){     
+    //   if(e.key==='Enter'){
+    //     tx=input.value
+    //     console.log(tx);
+    //   }})
+    //   //按go按钮获得输入框文字
+    // go.addEventListener('click',function(){
+    //     tx=input.value
+    //     console.log(tx);
+    // })
+ 
+  </script>
+
+  
+</body>
+</html>
